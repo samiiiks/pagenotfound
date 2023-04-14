@@ -7,7 +7,7 @@ import {
 import CallMadeIcon from '@material-ui/icons/CallMade';
 import Typography from "@material-ui/core/Typography";
 import { Box, Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -97,21 +97,21 @@ const PageHeadingFullSection: FC<PropTypes> = ({ tag, heading, description, butt
                 <Typography className={classes.description}>{description}</Typography>
             }
 
-            {(button1Label || button2Label) &&
+            {/* {(button1Label || button2Label) && */}
                 <Box>
                     {button1Label &&
                         <Link to={button1Link ?? "/sign-up"}>
-                            <Button variant="contained" className={classes.buttonStyle}>SIGN UP <CallMadeIcon className={classes.buttonIconStyle} /></Button>
+                            <Button variant="contained" className={classes.buttonStyle}>{button1Label  ?? "SIGN UP"}<CallMadeIcon className={classes.buttonIconStyle} /></Button>
                         </Link>
                     }
 
                     {button2Label &&
                         <Link to={button2Link ?? "/pricing"}>
-                            <Button variant="contained" className={classes.buttonViewPricing}>VIEW PRICING <CallMadeIcon className={classes.buttonIconStyle} /></Button>
+                            <Button variant="contained" className={classes.buttonViewPricing}>{button2Label  ?? "VIEW PRICING"} <CallMadeIcon className={classes.buttonIconStyle} /></Button>
                         </Link>
                     }
                 </Box>
-            }
+            {/* } */}
         </Box>
     )
 }

@@ -1,13 +1,8 @@
-import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-import resultNotFoundImage from './assest/image1.jpg'
 import SearchResultHeading from './PageHeadingFullSection';
-import { Box, Container, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, Typography } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import SearchResultNotFoundCard from './SearchResultNotFoundCard';
+import CallToActionSection from './CallToActionSection';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -115,47 +110,31 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function CustomizedInputBase() {
   const classes = useStyles();
-
   const tag = 'Insights & Trends'
   const heading = 'The benefits of green energy go beyond environmental impact.'
   const description = 'Find all industry insights, trends, events, and other news to stay ahead to get carbonzeroed.'
 
   return (
     <>
-      <Container style={{ marginTop: "39px" }}>
+      <Container>
         <SearchResultHeading
           tag={tag}
           heading={heading}
           description={description}
         />
-        {/*
-        <Grid className={classes.gridStyle}>
-          <Box className={classes.FormStyle}>
-            <Paper component="form" className={classes.root}>
-              <InputBase
-                className={classes.input}
-                placeholder="Searching"
-                inputProps={{ 'aria-label': 'Searching' }}
-              />
-              <IconButton type="submit" className={classes.iconButton} aria-label="search">
-                <SearchIcon />
-              </IconButton>
-            </Paper>
-          </Box>
-          <Box>
-            <select className={classes.select} name="language" placeholder='name'>
-              <option value="">short by:<p className={classes.optionStyle}>Latest</p></option>
-              <option value="javascript">JavaScript</option>
-              <option value="python">Python</option>
-              <option value="c++" disabled>C++</option>
-              <option value="java" >Java</option>
-            </select>
-          </Box>
-        </Grid> */}
-
         <SearchResultNotFoundCard />
-
       </Container>
+      <CallToActionSection
+        heading={<>Try Our <b>‍Free</b> 14-Day Trial Today & Decide Later!!</>}
+        thankYouMessage={'Thank you for subscribing. You’ll get a welcome mail shortly.'}
+        themeMode={'dark'}
+        buttonLabel={"Get Started"}
+        inputPlaceholder={"Enter Email"}
+        headingType="lg"
+        onChange={() => ""}
+        onClick={() => ""}
+        submitted={false}
+      />
     </>
 
   );
